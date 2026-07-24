@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>As the Field | Unconference Coaching &amp; Support</title>
+<title>AS the Field | Unconference Coaching &amp; Support</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; font-size: 112.5%; }
 
   body {
     font-family: var(--sans);
@@ -67,7 +67,7 @@
 
   .logo {
     font-family: var(--serif);
-    font-size: 1.4rem;
+    font-size: 30px;
     font-weight: 700;
     color: var(--forest);
     letter-spacing: 0.02em;
@@ -191,6 +191,17 @@
   .img-placeholder.sage { background: var(--sage); color: var(--olive); }
   .img-placeholder.plum { background: var(--plum); }
   .img-placeholder.forest { background: var(--forest); }
+  .img-placeholder.olive { background: var(--olive); }
+
+  .photo-frame {
+    padding: 6px;
+    border: 5px solid transparent;
+    border-radius: 10px;
+  }
+
+  .photo-frame.magenta { border-color: var(--magenta); }
+  .photo-frame.mint { border-color: var(--mint); }
+  .photo-frame.sage { border-color: var(--sage); }
 
   .gallery-grid {
     display: grid;
@@ -221,6 +232,10 @@
 
   .what-card p { font-size: 0.96rem; color: #4a4738; }
 
+  .what-card.outline-magenta { border: 3px solid var(--magenta); }
+  .what-card.outline-mint { border: 3px solid var(--mint); }
+  .what-card.outline-plum { border: 3px solid var(--plum); }
+
   .note-box {
     background: var(--bg);
     border-left: 4px solid var(--sage);
@@ -229,6 +244,21 @@
     border-radius: 4px;
     font-size: 0.96rem;
   }
+
+  .approach-box {
+    background: var(--bg);
+    border: 2px solid var(--forest);
+    padding: 28px 26px;
+    margin-top: 36px;
+    border-radius: 8px;
+  }
+
+  .approach-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .approach-box p { font-size: 0.98rem; color: #4a4738; }
 
   .offer-list {
     max-width: 760px;
@@ -280,17 +310,19 @@
     color: #4a4738;
   }
 
-  .role-tag {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 600;
+  .role-tag-big {
+    display: block;
+    width: fit-content;
+    font-size: 1.05rem;
+    font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--olive);
     background: var(--sage);
-    padding: 2px 10px;
+    padding: 6px 20px;
     border-radius: 999px;
-    margin-bottom: 10px;
+    margin: 0 auto 28px;
+    text-align: center;
   }
 
   /* Team */
@@ -307,6 +339,15 @@
     border: 1px solid #e8e4d8;
   }
 
+  .team-photo-frame {
+    padding: 6px;
+    border: 5px solid transparent;
+  }
+
+  .team-photo-frame.mint { border-color: var(--mint); }
+  .team-photo-frame.pink { border-color: var(--magenta); }
+  .team-photo-frame.olive { border-color: var(--olive); }
+
   .team-photo {
     height: 180px;
   }
@@ -321,13 +362,19 @@
   }
 
   .team-role {
-    font-size: 0.88rem;
-    color: var(--magenta);
+    display: inline-block;
+    font-size: 0.82rem;
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
+    padding: 4px 14px;
+    border-radius: 999px;
   }
+
+  .team-role.pink { background: var(--magenta); color: #fff; }
+  .team-role.olive { background: var(--olive); color: #fff; }
+  .team-role.mint { background: var(--mint); color: var(--forest); }
 
   .team-body p.bio {
     font-size: 0.94rem;
@@ -446,13 +493,13 @@
 
 <header>
   <div class="nav-inner">
-    <div class="logo">As the <span>Field</span></div>
+    <div class="logo">AS the <span>Field</span></div>
     <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav-menu').classList.toggle('open')">&#9776;</button>
     <nav>
       <ul id="nav-menu">
         <li><a href="#about">About Us</a></li>
         <li><a href="#what-we-do">What We Do</a></li>
-        <li><a href="#roles">Roles We Grow</a></li>
+        <li><a href="#roles">Roles We Support</a></li>
         <li><a href="#unconference">Unconferences</a></li>
         <li><a href="#glossary">Glossary</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -464,10 +511,10 @@
 <section class="hero">
   <div class="wrap">
     <span class="placeholder-note">Placeholder text — to be refined</span>
-    <h1>As the Field</h1>
+    <h1>AS the Field</h1>
     <p class="tagline">Playfully serious. Seriously playful. Coaching and support for teams hosting generative unconferences.</p>
     <p class="lede">
-      [Placeholder: 2–3 sentence overview of our endeavor.] As the Field helps organizations host
+      [Placeholder: 2–3 sentence overview of our endeavor.] AS the Field helps organizations host
       meaningful virtual unconferences by pairing practical infrastructure with thoughtful
       organizational support. We're not here to run the event for you — we're here to support the
       people already carrying the vision, so the openness, responsiveness, and human spark that make
@@ -486,7 +533,7 @@
       Our role is to coach and equip the people who are — with equal parts rigor and delight.
     </p>
     <div class="what-grid">
-      <div class="what-card">
+      <div class="what-card outline-magenta">
         <h3>Coach the Sourcekeeper</h3>
         <p>[Placeholder] Every good unconference starts with a person — or small group — carrying the
         original spark. We call that role the Sourcekeeper. We don't try to become the source; we
@@ -494,13 +541,13 @@
         the event off course, giving permission to say no, and helping reconnect with the joy that
         started this in the first place.</p>
       </div>
-      <div class="what-card">
+      <div class="what-card outline-mint">
         <h3>Build Supporting Teams</h3>
         <p>[Placeholder] We help establish and coach the teams that support participants and staff,
         including how to hold tensions that arise with care instead of letting small frustrations
         quietly pile up into big ones.</p>
       </div>
-      <div class="what-card">
+      <div class="what-card outline-plum">
         <h3>Support Generative Co-Creation</h3>
         <p>[Placeholder] We help design the workflows, onboarding, and structure that let sessions,
         conversations, and connections emerge rather than being predetermined — technology as
@@ -531,6 +578,7 @@
 <section id="roles" class="alt">
   <div class="wrap">
     <h2 class="section-title">Roles We Help Teams Grow Into</h2>
+    <span class="role-tag-big">Fun Title, Real Job</span>
     <p class="section-sub">
       [Placeholder] Beyond the Sourcekeeper, most unconferences quietly need a handful of roles that
       rarely get named out loud. We give them names anyway — partly because it's useful, partly
@@ -538,47 +586,39 @@
     </p>
     <div class="role-grid">
       <div class="role-card">
-        <span class="role-tag">Fun Title, Real Job</span>
         <h3>Vision Integrity Partner</h3>
         <p>[Placeholder] Keeps day-to-day decisions honest to the original intent of the gathering.</p>
       </div>
       <div class="role-card">
-        <span class="role-tag">Fun Title, Real Job</span>
         <h3>Strategic Friction Facilitator</h3>
         <p>[Placeholder] Makes room for healthy disagreement before it hardens into conflict.</p>
       </div>
       <div class="role-card">
-        <span class="role-tag">Fun Title, Real Job</span>
         <h3>Micro-Resolution Steward</h3>
         <p>[Placeholder] Catches the small frustrations early — those tend to do more damage over
         time than any single big blow-up.</p>
       </div>
       <div class="role-card">
-        <span class="role-tag">Fun Title, Real Job</span>
         <h3>Scope &amp; Coherence Manager</h3>
         <p>[Placeholder] Protects the event from quietly growing past what organizers can actually
         support, and helps tell a good idea from a distraction.</p>
       </div>
       <div class="role-card">
-        <span class="role-tag">Fun Title, Real Job</span>
         <h3>Engagement &amp; Vitality Lead</h3>
         <p>[Placeholder] Reconnects everyone to the point of the gathering, celebrates progress, and
         keeps energy up through the tired middle stretch.</p>
       </div>
       <div class="role-card">
-        <span class="role-tag">Fun Title, Real Job</span>
         <h3>Resource &amp; Feasibility Advisor</h3>
         <p>[Placeholder] Balances enthusiasm against the honest realities of time, staffing, and
         capacity.</p>
       </div>
       <div class="role-card">
-        <span class="role-tag">Fun Title, Real Job</span>
         <h3>Role Clarity &amp; Governance Advisor</h3>
         <p>[Placeholder] Clarifies who decides what, and backs up facilitators when a firm boundary
         is needed.</p>
       </div>
       <div class="role-card">
-        <span class="role-tag">Fun Title, Real Job</span>
         <h3>Narrative &amp; Artefact Lead</h3>
         <p>[Placeholder] Documents the unfolding event — patterns, stories, decisions — into living
         artefacts the community can keep using after the closing session.</p>
@@ -615,6 +655,15 @@
         and — yes — genuinely fun.</p>
       </div>
     </div>
+    <div class="approach-box">
+      <h3>Our Approach</h3>
+      <p>[Placeholder] Every engagement begins with conversation, not a sales pitch. Before we talk
+      tools or timelines, we want to understand why the gathering matters, what success looks like,
+      and what you hope people feel when they leave. Technology should serve human intention, not
+      replace it — so it stays in the background, doing its job quietly rather than becoming the
+      main event. And because relationships come before templates, our recommendations grow out of
+      what we observe and learn with each group, rather than a one-size-fits-all playbook.</p>
+    </div>
   </div>
 </section>
 
@@ -623,9 +672,15 @@
     <h2 class="section-title">From Past Unconferences</h2>
     <p class="section-sub">[Placeholder] Photos from previous events will go here.</p>
     <div class="gallery-grid">
-      <div class="img-placeholder">Image<br>Placeholder</div>
-      <div class="img-placeholder mint">Image<br>Placeholder</div>
-      <div class="img-placeholder sage">Image<br>Placeholder</div>
+      <div class="photo-frame magenta">
+        <div class="img-placeholder">Image<br>Placeholder</div>
+      </div>
+      <div class="photo-frame mint">
+        <div class="img-placeholder mint">Image<br>Placeholder</div>
+      </div>
+      <div class="photo-frame sage">
+        <div class="img-placeholder sage">Image<br>Placeholder</div>
+      </div>
     </div>
   </div>
 </section>
@@ -634,33 +689,39 @@
   <div class="wrap">
     <h2 class="section-title">About Us</h2>
     <p class="section-sub">
-      [Placeholder] As the Field is a small team of consultants who coach and support the people
+      [Placeholder] AS the Field is a small team of consultants who coach and support the people
       behind generative unconferences. Here's a bit about each of us — more to come.
     </p>
     <div class="team-grid">
       <div class="team-card">
-        <div class="team-photo img-placeholder">Photo<br>Placeholder</div>
+        <div class="team-photo-frame mint">
+          <div class="team-photo img-placeholder mint">Photo<br>Placeholder</div>
+        </div>
         <div class="team-body">
           <h3>Christine Francis</h3>
-          <div class="team-role">Consultant &amp; Coach</div>
+          <div class="team-role mint">[Placeholder role title]</div>
           <p class="bio">[Placeholder bio for Christine — background, experience, and what she brings
           to the team. To be filled in.]</p>
         </div>
       </div>
       <div class="team-card">
-        <div class="team-photo img-placeholder mint">Photo<br>Placeholder</div>
+        <div class="team-photo-frame pink">
+          <div class="team-photo img-placeholder">Photo<br>Placeholder</div>
+        </div>
         <div class="team-body">
           <h3>Danielle Johnson</h3>
-          <div class="team-role">Consultant &amp; Coach</div>
+          <div class="team-role pink">[Placeholder role title]</div>
           <p class="bio">[Placeholder bio for Danielle — background, experience, and what she brings
           to the team. To be filled in.]</p>
         </div>
       </div>
       <div class="team-card">
-        <div class="team-photo img-placeholder plum">Photo<br>Placeholder</div>
+        <div class="team-photo-frame olive">
+          <div class="team-photo img-placeholder olive">Photo<br>Placeholder</div>
+        </div>
         <div class="team-body">
           <h3>Mari Budlong</h3>
-          <div class="team-role">Consultant &amp; Coach</div>
+          <div class="team-role olive">[Placeholder role title]</div>
           <p class="bio">[Placeholder bio for Mari — background, experience, and what she brings to the
           team. To be filled in.]</p>
         </div>
@@ -750,7 +811,7 @@
 </section>
 
 <footer>
-  <p>&copy; 2026 As the Field. All rights reserved.</p>
+  <p>&copy; 2026 AS the Field. All rights reserved.</p>
   <p>Questions? Reach us at <a href="mailto:asthefield@gmail.com">asthefield@gmail.com</a></p>
 </footer>
 
