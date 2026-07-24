@@ -236,6 +236,9 @@
   .what-card.outline-magenta { border: 3px solid var(--magenta); }
   .what-card.outline-mint { border: 3px solid var(--mint); }
   .what-card.outline-plum { border: 3px solid var(--plum); }
+  .what-card.outline-forest { border: 3px solid var(--forest); }
+
+  #what-we-do .what-grid { grid-template-columns: repeat(4, 1fr); }
 
   .note-box {
     background: var(--bg);
@@ -354,6 +357,14 @@
     height: 180px;
   }
 
+  .team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+  }
+
   .team-body {
     padding: 22px 22px 26px;
   }
@@ -465,6 +476,7 @@
   /* Responsive */
   @media (max-width: 860px) {
     .what-grid, .team-grid { grid-template-columns: 1fr 1fr; }
+    #what-we-do .what-grid { grid-template-columns: 1fr 1fr; }
     .gallery-grid { grid-template-columns: 1fr 1fr; }
     .offer-list, .role-grid { grid-template-columns: 1fr; }
   }
@@ -487,6 +499,7 @@
     .menu-toggle { display: block; }
     .hero h1 { font-size: 1.9rem; }
     .what-grid, .team-grid, .gallery-grid { grid-template-columns: 1fr; }
+    #what-we-do .what-grid { grid-template-columns: 1fr; }
     .section-title { font-size: 1.6rem; }
   }
 </style>
@@ -514,14 +527,11 @@
   <div class="wrap">
     <span class="placeholder-note">Placeholder text — to be refined</span>
     <h1>AS the Field</h1>
-    <p class="tagline">Playfully serious. Seriously playful. Coaching and support for teams hosting generative unconferences.</p>
+    <p class="tagline">A playfully serious venture oriented toward emergence.</p>
     <p class="lede">
-      [Placeholder: 2–3 sentence overview of our endeavor.] AS the Field helps organizations host
-      meaningful virtual unconferences by pairing practical infrastructure with thoughtful
-      organizational support. We're not here to run the event for you — we're here to support the
-      people already carrying the vision, so the openness, responsiveness, and human spark that make
-      unconferences worth doing don't get lost in the logistics. We take the work seriously. We try
-      not to take ourselves too seriously.
+      AS the Field supports hosts in organizing virtual or hybrid unconferences designed to elicit
+      emergent collective intelligence and facilitate generative contrast in the service of engaging
+      participants and organizers alike in co-creating events based in relevant topics and themes.
     </p>
     <a class="btn" href="#contact">Request a Consultation</a>
   </div>
@@ -531,33 +541,41 @@
   <div class="wrap">
     <h2 class="section-title">What We Do</h2>
     <p class="section-sub">
-      [Placeholder] We are consultants, not owners or sourcekeepers of the unconferences we support.
-      Our role is to coach and equip the people who are — with equal parts rigor and delight.
+      As consultants, we support sourcekeepers and organizers in hosting unconferences. Our role is
+      to coach and equip as needed for facilitators to feel confident in hosting, managing potential
+      tensions, and finishing with information which supports them for future development.
     </p>
     <div class="what-grid">
       <div class="what-card outline-magenta">
         <h3>Coach the Sourcekeeper</h3>
-        <p>[Placeholder] Every good unconference starts with a person — or small group — carrying the
-        original spark. We call that role the Sourcekeeper. We don't try to become the source; we
-        offer Sourcekeeper Support: staying connected to the "why," noticing drift before it pulls
-        the event off course, giving permission to say no, and helping reconnect with the joy that
-        started this in the first place.</p>
+        <p>Coaching looks like video calls — talking through overwhelm, loss of spark, which parts
+        feel challenging, and what's big but realistic in terms of near-term and future goals.
+        Typically weekly, plus as-needed, with some text-based messages of support in between.</p>
       </div>
       <div class="what-card outline-mint">
         <h3>Build Supporting Teams</h3>
-        <p>[Placeholder] We help establish and coach the teams that support participants and staff,
-        including how to hold tensions that arise with care instead of letting small frustrations
-        quietly pile up into big ones.</p>
+        <p>We invite volunteering at every turn, then work with those volunteers until they feel
+        capable in their responsibilities. This isn't about filling seats with warm bodies — roles
+        emerge from what feels necessary, interesting, and engaging to the people taking them on.
+        Every engagement here is fairly bespoke.</p>
       </div>
       <div class="what-card outline-plum">
         <h3>Support Generative Co-Creation</h3>
-        <p>[Placeholder] We help design the workflows, onboarding, and structure that let sessions,
-        conversations, and connections emerge rather than being predetermined — technology as
-        infrastructure, not the main event.</p>
+        <p>We help hosts understand emergence and co-creation, letting the gathering build itself
+        with enough structure to hold — and enough space for the surprises: new formats, teams, or
+        sessions that feel important and that people want to commit to.</p>
+      </div>
+      <div class="what-card outline-forest">
+        <h3>Develop Relevant Artefacts</h3>
+        <p>Often an unconference ends and there's nothing to point back to — scattered notes, long
+        recordings, transcripts nobody will watch. We help generate (or support the generation of)
+        artefacts your team can actually use afterward for sense-making, meaning-making, and
+        taking action: a Miro or Mural board, a geographic map, a custom app (or several), a phone
+        tree, an evocative image, an audio artefact — whatever fits what happened.</p>
       </div>
     </div>
     <p class="section-sub" style="margin-top:44px; margin-bottom:8px;">
-      [Placeholder] Every engagement starts the same way: with conversation, not a sales pitch. Before
+      Every engagement starts the same way: with conversation, not a sales pitch. Before
       we talk tools or timelines, we want to understand why this gathering matters and what you hope
       people feel when they leave it. From there, support is modular — take what you need:
     </p>
@@ -570,7 +588,7 @@
       <li>Process documentation &amp; artefact development</li>
     </ul>
     <div class="note-box">
-      [Placeholder] We work primarily in virtual settings at this time. In-person engagements may be
+      We work primarily in virtual settings at this time. In-person engagements may be
       considered on a case-by-case basis and would be discussed and worked out together on an initial
       video call.
     </div>
@@ -640,21 +658,25 @@
     <p class="section-sub">[Placeholder] A short primer for anyone new to the format.</p>
     <div class="what-grid">
       <div class="what-card">
-        <h3>Not a Traditional Conference</h3>
-        <p>[Placeholder] Rather than a fixed lineup of speakers and sessions decided months in advance,
-        an unconference lets the agenda take shape from the people who show up and the questions they
-        bring.</p>
+        <h3>Topics Chosen Close to the Moment</h3>
+        <p>Traditional conferences lock in keynote speakers and topics months in advance. At an
+        unconference, the people hosting a session choose their topic close to the event itself —
+        because it feels alive, timely, or worth talking about right now, not because it was set on
+        a program months ago.</p>
       </div>
       <div class="what-card">
-        <h3>Participant-Led</h3>
-        <p>[Placeholder] Anyone can propose a session, host a conversation, or join one. The format
-        trusts participants to know what's relevant and worth exploring together.</p>
+        <h3>No Headliners, No Hierarchy</h3>
+        <p>Anyone can add a call — organizer or participant, first-timer or veteran. There's no
+        primary speaker. Some sessions draw more people, some hosts bring more experience, but
+        everyone starts on equal footing. Good conversations rise because people are drawn to them,
+        not because someone was pre-selected to have them.</p>
       </div>
       <div class="what-card">
-        <h3>Held With Care</h3>
-        <p>[Placeholder] Openness doesn't mean unstructured. Good unconferences rely on thoughtful
-        infrastructure and quiet organizational support so that emergence stays workable, humane,
-        and — yes — genuinely fun.</p>
+        <h3>Structured for Surprise</h3>
+        <p>This is a close cousin of Open Space Technology: an unconference may have a theme or a
+        few constraints, but what actually gets discussed — and who leads it — takes shape in the
+        room. Just enough structure to keep things workable, just enough openness for something
+        unexpected and alive to happen.</p>
       </div>
     </div>
     <div class="approach-box">
@@ -719,13 +741,16 @@
       </div>
       <div class="team-card">
         <div class="team-photo-frame olive">
-          <div class="team-photo img-placeholder olive">Photo<br>Placeholder</div>
+          <div class="team-photo"><img src="mari-photo.jpg" alt="Mari Budlong"></div>
         </div>
         <div class="team-body">
           <h3>Mari Budlong</h3>
           <div class="team-role olive">[Placeholder role title]</div>
-          <p class="bio">[Placeholder bio for Mari — background, experience, and what she brings to the
-          team. To be filled in.]</p>
+          <p class="bio">Mari Budlong is a mother of four, sister to four, a veteran, coach, and
+          multi-faceted human who believes our humanity is worth tending as we grow alongside our
+          quickly evolving technology. With a deep concern for the relational and ecological impacts
+          of our choices — digital and otherwise — she brings heart, humor, and wonder to
+          conversations where tech meets soul.</p>
         </div>
       </div>
     </div>
