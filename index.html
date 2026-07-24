@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>As the Field | Unconference Coaching &amp; Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #435C43;
+    --olive: #585C43;
+    --magenta: #D02DDB;
+    --plum: #5A435C;
+    --mint: #7EDB7D;
+    --sage: #CDDB7D;
+    --bg: #FDFCF9;
+    --bg-alt: #F6F4EE;
+    --text: #33322B;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--serif);
+    color: var(--forest);
+    line-height: 1.25;
+  }
+
+  a { color: var(--magenta); }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header / Nav */
+  header {
+    background: var(--bg);
+    border-bottom: 1px solid #e8e4d8;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--forest);
+    letter-spacing: 0.02em;
+  }
+
+  .logo span { color: var(--magenta); }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 26px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  nav a:hover { color: var(--magenta); }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--forest);
+    cursor: pointer;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+    padding: 72px 0 56px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: 18px;
+  }
+
+  .hero .tagline {
+    font-size: 1.15rem;
+    color: var(--olive);
+    font-weight: 500;
+    margin-bottom: 22px;
+  }
+
+  .hero p.lede {
+    max-width: 680px;
+    margin: 0 auto 30px;
+    font-size: 1.05rem;
+  }
+
+  .placeholder-note {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--olive);
+    background: var(--sage);
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--magenta);
+    color: #fff;
+    padding: 13px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.98rem;
+    transition: background 0.2s ease;
+  }
+
+  .btn:hover { background: var(--plum); }
+
+  /* Section base */
+  section {
+    padding: 64px 0;
+  }
+
+  section.alt { background: var(--bg-alt); }
+
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .section-sub {
+    text-align: center;
+    max-width: 660px;
+    margin: 0 auto 44px;
+    color: #555140;
+    font-size: 1.02rem;
+  }
+
+  /* Image placeholders */
+  .img-placeholder {
+    background: var(--magenta);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 8px;
+    min-height: 220px;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .img-placeholder.mint { background: var(--mint); color: var(--forest); }
+  .img-placeholder.sage { background: var(--sage); color: var(--olive); }
+  .img-placeholder.plum { background: var(--plum); }
+  .img-placeholder.forest { background: var(--forest); }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  /* What we do / roles */
+  .what-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .what-card {
+    background: var(--bg);
+    border: 1px solid #e8e4d8;
+    border-radius: 10px;
+    padding: 28px 24px;
+  }
+
+  .what-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    color: var(--olive);
+  }
+
+  .what-card p { font-size: 0.96rem; color: #4a4738; }
+
+  .note-box {
+    background: var(--bg);
+    border-left: 4px solid var(--sage);
+    padding: 18px 22px;
+    margin-top: 36px;
+    border-radius: 4px;
+    font-size: 0.96rem;
+  }
+
+  .offer-list {
+    max-width: 760px;
+    margin: 36px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 28px;
+    list-style: none;
+    font-size: 0.96rem;
+  }
+
+  .offer-list li {
+    padding-left: 22px;
+    position: relative;
+  }
+
+  .offer-list li::before {
+    content: "\2726";
+    position: absolute;
+    left: 0;
+    color: var(--magenta);
+    font-size: 0.85rem;
+  }
+
+  .role-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .role-card {
+    background: var(--bg);
+    border: 1px solid #e8e4d8;
+    border-left: 4px solid var(--magenta);
+    border-radius: 8px;
+    padding: 20px 22px;
+  }
+
+  .role-card:nth-child(2n) { border-left-color: var(--mint); }
+  .role-card:nth-child(3n) { border-left-color: var(--plum); }
+
+  .role-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+
+  .role-card p {
+    font-size: 0.93rem;
+    color: #4a4738;
+  }
+
+  .role-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--olive);
+    background: var(--sage);
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+  }
+
+  /* Team */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .team-card {
+    background: var(--bg);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e8e4d8;
+  }
+
+  .team-photo {
+    height: 180px;
+  }
+
+  .team-body {
+    padding: 22px 22px 26px;
+  }
+
+  .team-body h3 {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+  }
+
+  .team-role {
+    font-size: 0.88rem;
+    color: var(--magenta);
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .team-body p.bio {
+    font-size: 0.94rem;
+    color: #4a4738;
+  }
+
+  /* Glossary */
+  .glossary-list {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .glossary-item {
+    background: var(--bg);
+    border: 1px solid #e8e4d8;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+
+  .glossary-term {
+    font-family: var(--serif);
+    font-weight: 700;
+    color: var(--forest);
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .glossary-def { font-size: 0.96rem; color: #4a4738; }
+
+  /* Contact */
+  .contact-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 30px;
+  }
+
+  label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #d8d3c2;
+    border-radius: 6px;
+    font-family: var(--sans);
+    font-size: 0.96rem;
+    background: #fff;
+    color: var(--text);
+  }
+
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--magenta);
+  }
+
+  textarea { resize: vertical; min-height: 120px; }
+
+  .contact-note {
+    font-size: 0.85rem;
+    color: #6b6858;
+    margin-top: 10px;
+  }
+
+  footer {
+    background: var(--forest);
+    color: #eef3ee;
+    text-align: center;
+    padding: 34px 24px;
+    font-size: 0.88rem;
+  }
+
+  footer a { color: var(--sage); }
+
+  /* Responsive */
+  @media (max-width: 860px) {
+    .what-grid, .team-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .offer-list, .role-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    nav ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      flex-direction: column;
+      gap: 0;
+      display: none;
+      border-bottom: 1px solid #e8e4d8;
+    }
+    nav ul.open { display: flex; }
+    nav li { border-top: 1px solid #efece0; }
+    nav a { display: block; padding: 14px 24px; }
+    .menu-toggle { display: block; }
+    .hero h1 { font-size: 1.9rem; }
+    .what-grid, .team-grid, .gallery-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="logo">As the <span>Field</span></div>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav-menu').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#what-we-do">What We Do</a></li>
+        <li><a href="#roles">Roles We Grow</a></li>
+        <li><a href="#unconference">Unconferences</a></li>
+        <li><a href="#glossary">Glossary</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="placeholder-note">Placeholder text — to be refined</span>
+    <h1>As the Field</h1>
+    <p class="tagline">Playfully serious. Seriously playful. Coaching and support for teams hosting generative unconferences.</p>
+    <p class="lede">
+      [Placeholder: 2–3 sentence overview of our endeavor.] As the Field helps organizations host
+      meaningful virtual unconferences by pairing practical infrastructure with thoughtful
+      organizational support. We're not here to run the event for you — we're here to support the
+      people already carrying the vision, so the openness, responsiveness, and human spark that make
+      unconferences worth doing don't get lost in the logistics. We take the work seriously. We try
+      not to take ourselves too seriously.
+    </p>
+    <a class="btn" href="#contact">Request a Consultation</a>
+  </div>
+</section>
+
+<section id="what-we-do">
+  <div class="wrap">
+    <h2 class="section-title">What We Do</h2>
+    <p class="section-sub">
+      [Placeholder] We are consultants, not owners or sourcekeepers of the unconferences we support.
+      Our role is to coach and equip the people who are — with equal parts rigor and delight.
+    </p>
+    <div class="what-grid">
+      <div class="what-card">
+        <h3>Coach the Sourcekeeper</h3>
+        <p>[Placeholder] Every good unconference starts with a person — or small group — carrying the
+        original spark. We call that role the Sourcekeeper. We don't try to become the source; we
+        offer Sourcekeeper Support: staying connected to the "why," noticing drift before it pulls
+        the event off course, giving permission to say no, and helping reconnect with the joy that
+        started this in the first place.</p>
+      </div>
+      <div class="what-card">
+        <h3>Build Supporting Teams</h3>
+        <p>[Placeholder] We help establish and coach the teams that support participants and staff,
+        including how to hold tensions that arise with care instead of letting small frustrations
+        quietly pile up into big ones.</p>
+      </div>
+      <div class="what-card">
+        <h3>Support Generative Co-Creation</h3>
+        <p>[Placeholder] We help design the workflows, onboarding, and structure that let sessions,
+        conversations, and connections emerge rather than being predetermined — technology as
+        infrastructure, not the main event.</p>
+      </div>
+    </div>
+    <p class="section-sub" style="margin-top:44px; margin-bottom:8px;">
+      [Placeholder] Every engagement starts the same way: with conversation, not a sales pitch. Before
+      we talk tools or timelines, we want to understand why this gathering matters and what you hope
+      people feel when they leave it. From there, support is modular — take what you need:
+    </p>
+    <ul class="offer-list">
+      <li>Technical setup &amp; registration workflows</li>
+      <li>Calendars &amp; scheduling systems</li>
+      <li>Communication systems &amp; host support</li>
+      <li>Opening &amp; closing event support</li>
+      <li>Organizer &amp; sourcekeeper coaching</li>
+      <li>Process documentation &amp; artefact development</li>
+    </ul>
+    <div class="note-box">
+      [Placeholder] We work primarily in virtual settings at this time. In-person engagements may be
+      considered on a case-by-case basis and would be discussed and worked out together on an initial
+      video call.
+    </div>
+  </div>
+</section>
+
+<section id="roles" class="alt">
+  <div class="wrap">
+    <h2 class="section-title">Roles We Help Teams Grow Into</h2>
+    <p class="section-sub">
+      [Placeholder] Beyond the Sourcekeeper, most unconferences quietly need a handful of roles that
+      rarely get named out loud. We give them names anyway — partly because it's useful, partly
+      because we think the work deserves a little delight.
+    </p>
+    <div class="role-grid">
+      <div class="role-card">
+        <span class="role-tag">Fun Title, Real Job</span>
+        <h3>Vision Integrity Partner</h3>
+        <p>[Placeholder] Keeps day-to-day decisions honest to the original intent of the gathering.</p>
+      </div>
+      <div class="role-card">
+        <span class="role-tag">Fun Title, Real Job</span>
+        <h3>Strategic Friction Facilitator</h3>
+        <p>[Placeholder] Makes room for healthy disagreement before it hardens into conflict.</p>
+      </div>
+      <div class="role-card">
+        <span class="role-tag">Fun Title, Real Job</span>
+        <h3>Micro-Resolution Steward</h3>
+        <p>[Placeholder] Catches the small frustrations early — those tend to do more damage over
+        time than any single big blow-up.</p>
+      </div>
+      <div class="role-card">
+        <span class="role-tag">Fun Title, Real Job</span>
+        <h3>Scope &amp; Coherence Manager</h3>
+        <p>[Placeholder] Protects the event from quietly growing past what organizers can actually
+        support, and helps tell a good idea from a distraction.</p>
+      </div>
+      <div class="role-card">
+        <span class="role-tag">Fun Title, Real Job</span>
+        <h3>Engagement &amp; Vitality Lead</h3>
+        <p>[Placeholder] Reconnects everyone to the point of the gathering, celebrates progress, and
+        keeps energy up through the tired middle stretch.</p>
+      </div>
+      <div class="role-card">
+        <span class="role-tag">Fun Title, Real Job</span>
+        <h3>Resource &amp; Feasibility Advisor</h3>
+        <p>[Placeholder] Balances enthusiasm against the honest realities of time, staffing, and
+        capacity.</p>
+      </div>
+      <div class="role-card">
+        <span class="role-tag">Fun Title, Real Job</span>
+        <h3>Role Clarity &amp; Governance Advisor</h3>
+        <p>[Placeholder] Clarifies who decides what, and backs up facilitators when a firm boundary
+        is needed.</p>
+      </div>
+      <div class="role-card">
+        <span class="role-tag">Fun Title, Real Job</span>
+        <h3>Narrative &amp; Artefact Lead</h3>
+        <p>[Placeholder] Documents the unfolding event — patterns, stories, decisions — into living
+        artefacts the community can keep using after the closing session.</p>
+      </div>
+    </div>
+    <div class="note-box">
+      [Placeholder] We don't hand every team all eight roles on day one. We help you figure out which
+      ones you actually need, coach whoever picks them up, and keep it human-centered before it's
+      ever templated — relationships first, playbooks later.
+    </div>
+  </div>
+</section>
+
+<section id="unconference">
+  <div class="wrap">
+    <h2 class="section-title">What Is an Unconference?</h2>
+    <p class="section-sub">[Placeholder] A short primer for anyone new to the format.</p>
+    <div class="what-grid">
+      <div class="what-card">
+        <h3>Not a Traditional Conference</h3>
+        <p>[Placeholder] Rather than a fixed lineup of speakers and sessions decided months in advance,
+        an unconference lets the agenda take shape from the people who show up and the questions they
+        bring.</p>
+      </div>
+      <div class="what-card">
+        <h3>Participant-Led</h3>
+        <p>[Placeholder] Anyone can propose a session, host a conversation, or join one. The format
+        trusts participants to know what's relevant and worth exploring together.</p>
+      </div>
+      <div class="what-card">
+        <h3>Held With Care</h3>
+        <p>[Placeholder] Openness doesn't mean unstructured. Good unconferences rely on thoughtful
+        infrastructure and quiet organizational support so that emergence stays workable, humane,
+        and — yes — genuinely fun.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="alt">
+  <div class="wrap">
+    <h2 class="section-title">From Past Unconferences</h2>
+    <p class="section-sub">[Placeholder] Photos from previous events will go here.</p>
+    <div class="gallery-grid">
+      <div class="img-placeholder">Image<br>Placeholder</div>
+      <div class="img-placeholder mint">Image<br>Placeholder</div>
+      <div class="img-placeholder sage">Image<br>Placeholder</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2 class="section-title">About Us</h2>
+    <p class="section-sub">
+      [Placeholder] As the Field is a small team of consultants who coach and support the people
+      behind generative unconferences. Here's a bit about each of us — more to come.
+    </p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo img-placeholder">Photo<br>Placeholder</div>
+        <div class="team-body">
+          <h3>Christine Francis</h3>
+          <div class="team-role">Consultant &amp; Coach</div>
+          <p class="bio">[Placeholder bio for Christine — background, experience, and what she brings
+          to the team. To be filled in.]</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo img-placeholder mint">Photo<br>Placeholder</div>
+        <div class="team-body">
+          <h3>Danielle Johnson</h3>
+          <div class="team-role">Consultant &amp; Coach</div>
+          <p class="bio">[Placeholder bio for Danielle — background, experience, and what she brings
+          to the team. To be filled in.]</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo img-placeholder plum">Photo<br>Placeholder</div>
+        <div class="team-body">
+          <h3>Mari Budlong</h3>
+          <div class="team-role">Consultant &amp; Coach</div>
+          <p class="bio">[Placeholder bio for Mari — background, experience, and what she brings to the
+          team. To be filled in.]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="glossary" class="alt">
+  <div class="wrap">
+    <h2 class="section-title">Glossary</h2>
+    <p class="section-sub">A few terms we use often. We'll keep adding to this list.</p>
+    <div class="glossary-list">
+      <div class="glossary-item">
+        <div class="glossary-term">Unconference</div>
+        <div class="glossary-def">[Placeholder] A gathering format in which the agenda is shaped
+        largely by participants rather than set in advance by organizers — sessions emerge from the
+        questions people bring on the day.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Co-create</div>
+        <div class="glossary-def">[Placeholder] To build a session, conversation, or outcome together
+        with participants, rather than delivering something predetermined to an audience.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Generative Tension</div>
+        <div class="glossary-def">[Placeholder] A disagreement or friction that, when held well, opens
+        up new understanding or possibility rather than shutting conversation down.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Sourcekeeper</div>
+        <div class="glossary-def">[Placeholder] The person — or small group — who carries the original
+        energy and intent for a gathering. We coach and support this role; we never try to become it.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Artefact</div>
+        <div class="glossary-def">[Placeholder] A living output from an unconference — a process map,
+        framework, decision record, or reflective essay — that keeps helping a community long after
+        the event ends.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Enthusiastic Drift</div>
+        <div class="glossary-def">[Placeholder] The very normal, very human tendency for excited
+        participants to nudge a session (or the whole event) somewhere new. Not a personality problem
+        — a predictable dynamic we help redirect with a light touch.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Residue</div>
+        <div class="glossary-def">[Placeholder] The leftover emotional weight that can linger after a
+        disagreement is technically "resolved." We build in small practices to help groups notice and
+        release it, rather than carry it into the next thing.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-wrap">
+    <h2 class="section-title">Request a Consultation</h2>
+    <p class="section-sub">
+      Tell us a bit about your group and what you're hoping to gather people around. We'll follow up
+      to schedule a conversation.
+    </p>
+    <form action="mailto:asthefield@gmail.com" method="post" enctype="text/plain">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="Name" required>
+      </div>
+      <div>
+        <label for="org">Organization / Community</label>
+        <input type="text" id="org" name="Organization">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" required>
+      </div>
+      <div>
+        <label for="message">What are you hoping to explore or gather people around?</label>
+        <textarea id="message" name="Message" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Consultation Request</button>
+      <p class="contact-note">
+        Submitting this form will open your email client with a message addressed to us.
+      </p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 As the Field. All rights reserved.</p>
+  <p>Questions? Reach us at <a href="mailto:asthefield@gmail.com">asthefield@gmail.com</a></p>
+</footer>
+
+</body>
+</html>
