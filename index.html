@@ -102,7 +102,7 @@
   /* Hero */
   .hero {
     background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
-    padding: 72px 0 56px;
+    padding: 72px 0 24px;
     text-align: center;
   }
 
@@ -152,6 +152,8 @@
   section {
     padding: 64px 0;
   }
+
+  #what-we-do { padding-top: 36px; }
 
   section.alt { background: var(--bg-alt); }
 
@@ -237,6 +239,20 @@
   .what-card.outline-mint { border: 5px solid var(--mint); }
   .what-card.outline-plum { border: 5px solid var(--plum); }
   .what-card.outline-forest { border: 5px solid var(--forest); }
+  .what-card.outline-olive { border: 5px solid var(--olive); }
+
+  .card-header {
+    margin: -28px -24px 18px -24px;
+    padding: 16px 24px;
+    border-radius: 6px 6px 0 0;
+    text-align: center;
+  }
+
+  .card-header h3 { color: #fff; margin-bottom: 0; }
+
+  .card-header.magenta { background: var(--magenta); }
+  .card-header.olive { background: var(--olive); }
+  .card-header.plum { background: var(--plum); }
 
   #what-we-do .what-grid { grid-template-columns: repeat(4, 1fr); }
 
@@ -465,6 +481,24 @@
     margin-top: 10px;
   }
 
+  #contact { background: var(--plum); }
+
+  #contact .section-title { color: var(--bg); }
+
+  #contact .section-sub { color: rgba(253, 252, 249, 0.85); }
+
+  #contact label { color: var(--bg); }
+
+  #contact .contact-note { color: rgba(253, 252, 249, 0.75); }
+
+  #contact input, #contact textarea { border: 2px solid var(--mint); }
+
+  #contact input:focus, #contact textarea:focus { border-color: var(--magenta); }
+
+  #contact .btn { background: var(--sage); color: var(--forest); }
+
+  #contact .btn:hover { background: var(--mint); color: var(--forest); }
+
   footer {
     background: var(--forest);
     color: #eef3ee;
@@ -554,14 +588,14 @@
         feel challenging, and what's big but realistic in terms of near-term and future goals.
         Typically weekly, plus as-needed, with some text-based messages of support in between.</p>
       </div>
-      <div class="what-card outline-mint">
+      <div class="what-card outline-plum">
         <h3>Build Supporting Teams</h3>
         <p>We invite volunteering at every turn, then work with those volunteers until they feel
         capable in their responsibilities. This isn't about filling seats with warm bodies — roles
         emerge from what feels necessary, interesting, and engaging to the people taking them on.
         Every engagement here is fairly bespoke.</p>
       </div>
-      <div class="what-card outline-plum">
+      <div class="what-card outline-mint">
         <h3>Support Generative Co&#8209;Creation</h3>
         <p>We help hosts understand emergence and co-creation, letting the gathering build itself
         with enough structure to hold — and enough space for the surprises: new formats, teams, or
@@ -659,22 +693,22 @@
     <h2 class="section-title">What Is an Unconference?</h2>
     <p class="section-sub">[Placeholder] A short primer for anyone new to the format.</p>
     <div class="what-grid">
-      <div class="what-card">
-        <h3>Topics Chosen Close to the Moment</h3>
+      <div class="what-card outline-magenta">
+        <div class="card-header magenta"><h3>Topics Chosen Close to the Moment</h3></div>
         <p>Traditional conferences lock in keynote speakers and topics months in advance. At an
         unconference, the people hosting a session choose their topic close to the event itself —
         because it feels alive, timely, or worth talking about right now, not because it was set on
         a program months ago.</p>
       </div>
-      <div class="what-card">
-        <h3>No Headliners, No Hierarchy</h3>
+      <div class="what-card outline-olive">
+        <div class="card-header olive"><h3>No Headliners, No Hierarchy</h3></div>
         <p>Anyone can add a call — organizer or participant, first-timer or veteran. There's no
         primary speaker. Some sessions draw more people, some hosts bring more experience, but
         everyone starts on equal footing. Good conversations rise because people are drawn to them,
         not because someone was pre-selected to have them.</p>
       </div>
-      <div class="what-card">
-        <h3>Structured for Surprise</h3>
+      <div class="what-card outline-plum">
+        <div class="card-header plum"><h3>Structured for Surprise</h3></div>
         <p>This is a close cousin of Open Space Technology: an unconference may have a theme or a
         few constraints, but what actually gets discussed — and who leads it — takes shape in the
         room. Just enough structure to keep things workable, just enough openness for something
