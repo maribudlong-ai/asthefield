@@ -9,12 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --forest: #435C43;
-    --olive: #585C43;
-    --magenta: #D02DDB;
-    --plum: #5A435C;
-    --mint: #7EDB7D;
-    --sage: #CDDB7D;
+    --forest: #435C44;
+    --olive: #575C43;
+    --magenta: #D88BDB;
+    --plum: #5B435C;
+    --mint: #77DB79;
+    --sage: #D1DBA5;
     --bg: #FDFCF9;
     --bg-alt: #F6F4EE;
     --text: #33322B;
@@ -39,7 +39,7 @@
     line-height: 1.25;
   }
 
-  a { color: var(--magenta); }
+  a { color: var(--plum); }
 
   .wrap {
     max-width: 1080px;
@@ -73,7 +73,7 @@
     letter-spacing: 0.02em;
   }
 
-  .logo span { color: var(--magenta); }
+  .logo span { color: var(--plum); }
 
   nav ul {
     list-style: none;
@@ -88,7 +88,7 @@
     font-size: 0.95rem;
   }
 
-  nav a:hover { color: var(--magenta); }
+  nav a:hover { color: var(--plum); }
 
   .menu-toggle {
     display: none;
@@ -137,16 +137,16 @@
   .btn {
     display: inline-block;
     background: var(--magenta);
-    color: #fff;
+    color: var(--plum);
     padding: 13px 30px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.98rem;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
   }
 
-  .btn:hover { background: var(--plum); }
+  .btn:hover { background: var(--plum); color: var(--bg); }
 
   /* Section base */
   section {
@@ -174,7 +174,7 @@
   /* Image placeholders */
   .img-placeholder {
     background: var(--magenta);
-    color: #fff;
+    color: var(--plum);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -191,9 +191,9 @@
 
   .img-placeholder.mint { background: var(--mint); color: var(--forest); }
   .img-placeholder.sage { background: var(--sage); color: var(--olive); }
-  .img-placeholder.plum { background: var(--plum); }
-  .img-placeholder.forest { background: var(--forest); }
-  .img-placeholder.olive { background: var(--olive); }
+  .img-placeholder.plum { background: var(--plum); color: #fff; }
+  .img-placeholder.forest { background: var(--forest); color: #fff; }
+  .img-placeholder.olive { background: var(--olive); color: #fff; }
 
   .photo-frame {
     padding: 6px;
@@ -251,6 +251,7 @@
   .card-header h3 { color: #fff; margin-bottom: 0; }
 
   .card-header.magenta { background: var(--magenta); }
+  .card-header.magenta h3 { color: var(--plum); }
   .card-header.olive { background: var(--olive); }
   .card-header.plum { background: var(--plum); }
 
@@ -302,7 +303,7 @@
     content: "\2726";
     position: absolute;
     left: 0;
-    color: var(--magenta);
+    color: var(--plum);
     font-size: 0.85rem;
   }
 
@@ -372,7 +373,7 @@
   .team-photo-frame.olive { border-color: var(--olive); }
 
   .team-photo {
-    height: 180px;
+    height: 300px;
   }
 
   .team-photo img {
@@ -403,7 +404,7 @@
     border-radius: 999px;
   }
 
-  .team-role.pink { background: var(--magenta); color: #fff; }
+  .team-role.pink { background: var(--magenta); color: var(--plum); }
   .team-role.olive { background: var(--olive); color: #fff; }
   .team-role.mint { background: var(--mint); color: var(--forest); }
 
@@ -512,6 +513,34 @@
     border-radius: 8px;
   }
 
+  .band {
+    text-align: center;
+  }
+
+  .band .section-title { color: var(--bg); }
+
+  .band .section-sub { color: rgba(253, 252, 249, 0.85); }
+
+  .band .btn-alt {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .band.olive { background: var(--olive); }
+  .band.olive .section-title { color: var(--sage); }
+  .band.olive .btn-alt { background: var(--sage); color: var(--forest); }
+  .band.olive .btn-alt:hover { background: var(--mint); color: var(--forest); }
+
+  .band.forest { background: var(--forest); }
+  .band.forest .section-title { color: var(--mint); }
+  .band.forest .btn-alt { background: var(--magenta); color: var(--plum); }
+  .band.forest .btn-alt:hover { background: var(--mint); color: var(--forest); }
+
   footer {
     background: var(--forest);
     color: #eef3ee;
@@ -583,6 +612,17 @@
       participants and organizers alike in co-creating events based in relevant topics and themes.
     </p>
     <a class="btn" href="#contact">Request a Consultation</a>
+  </div>
+</section>
+
+<section class="band forest">
+  <div class="wrap">
+    <h2 class="section-title">New to the Language?</h2>
+    <p class="section-sub">
+      We're building a shared vocabulary for this work — unconference, sourcekeeper, kernel, and
+      more. Explore the terms below.
+    </p>
+    <a class="btn-alt" href="#glossary">Browse the Living Lexicon</a>
   </div>
 </section>
 
@@ -705,6 +745,16 @@
   </div>
 </section>
 
+<section class="band olive">
+  <div class="wrap">
+    <h2 class="section-title">Technology Serves Intention, Not the Other Way Around</h2>
+    <p class="section-sub">
+      Tools and workflows stay in the background, doing their job quietly, so the conversation
+      remains the main event — never the platform running it.
+    </p>
+  </div>
+</section>
+
 <section id="unconference">
   <div class="wrap">
     <h2 class="section-title">What Is an Unconference?</h2>
@@ -744,23 +794,6 @@
   </div>
 </section>
 
-<section id="gallery" class="alt">
-  <div class="wrap">
-    <h2 class="section-title">From Past Unconferences</h2>
-    <p class="section-sub">[Placeholder] Photos from previous events will go here.</p>
-    <div class="gallery-grid">
-      <div class="photo-frame plum">
-        <div class="img-placeholder plum">Image<br>Placeholder</div>
-      </div>
-      <div class="photo-frame mint">
-        <div class="img-placeholder mint">Image<br>Placeholder</div>
-      </div>
-      <div class="photo-frame sage">
-        <div class="img-placeholder sage">Image<br>Placeholder</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section id="about">
   <div class="wrap">
